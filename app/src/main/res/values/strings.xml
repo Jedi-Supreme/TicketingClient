@@ -7,4 +7,7 @@
     <string name="verify">Verify</string>
     <string name="verifying">Verifying…</string>
     <string name="phone_valid_intro">We will send you a one time SMS message to verify your phone number. Enter the <b>6-digit code</b> below</string>
+    <string name="first_name_lbl">First Name</string>
+    <string name="last_name_lbl">Last Name</string>
+    <string name="email_opt_lbl">Email (Optional)</string>
 </resources>

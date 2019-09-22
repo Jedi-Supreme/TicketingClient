@@ -7,6 +7,7 @@
 
     <!--Country Code Picker-->
     <com.hbb20.CountryCodePicker
+        android:padding="@dimen/margin_tiny"
         android:id="@+id/hbb_picker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +34,7 @@
             android:id="@+id/et_login_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="10"
             android:drawableStart="@drawable/ic_phone_black_24dp"
             android:drawablePadding="@dimen/margin_small"
             android:hint="@string/ent_numb_lbl"
@@ -43,7 +45,7 @@
 
     <Button
         android:id="@+id/bt_numbfrag_input"
-        style="@style/AppBttons_style"
+        style="@style/AppButtons_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"

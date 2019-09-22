@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:colorBackground"
     android:padding="@dimen/activity_padding">
 
     <androidx.cardview.widget.CardView
@@ -197,7 +198,7 @@
 
     <Button
         android:id="@+id/bt_frag_verifycode"
-        style="@style/AppBttons_style"
+        style="@style/AppButtons_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
