@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ticketing Client</string>
+    <string name="ent_numb_lbl">Enter Phone Number (XXX — XXX — XXXX)</string>
+    <string name="confirm_lbl">Confirm</string>
+    <string name="resend_code_in">Resend code in: 0:</string>
+    <string name="resend_code"><u>Resend code</u></string>
+    <string name="verify">Verify</string>
+    <string name="verifying">Verifying…</string>
+    <string name="phone_valid_intro">We will send you a one time SMS message to verify your phone number. Enter the <b>6-digit code</b> below</string>
+</resources>

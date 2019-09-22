@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_tiny">
+
+    <!--Country Code Picker-->
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/hbb_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_dark_border"
+        android:gravity="center"
+        app:ccp_contentColor="@color/colorAccent"
+        app:ccp_defaultNameCode="GH"
+        app:ccp_showFullName="true"
+        app:ccp_showPhoneCode="true"
+        app:ccp_textSize="@dimen/normal_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+    <!--Country Code Picker-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_login_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/hbb_picker">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_login_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_phone_black_24dp"
+            android:drawablePadding="@dimen/margin_small"
+            android:hint="@string/ent_numb_lbl"
+            android:inputType="phone"
+            android:textSize="@dimen/normal_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/bt_numbfrag_input"
+        style="@style/AppBttons_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/confirm_lbl"
+        app:layout_constraintTop_toBottomOf="@id/input_login_number" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
