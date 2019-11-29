@@ -1,9 +1,13 @@
 package com.jedit.ticketingclient.activities;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
@@ -12,7 +16,13 @@ import com.jedit.ticketingclient.fragments.Mobile_number_fragment;
 import com.jedit.ticketingclient.fragments.User_Details_fragment;
 import com.jedit.ticketingclient.models.Passenger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
+
+    ViewPager login_pager;
+    LoginPager_test login_pager_adapter;
 
     //============================================ON CREATE=========================================
     @Override
@@ -20,9 +30,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_login);
 
-        load_phoneFragment();
-        //loadUser_frag();
+       login_pager = findViewById(R.id.login_frag_pager);
 
+         login_pager_adapter = new LoginPager_test(getSupportFragmentManager(),FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+
+        login_pager_adapter.addFragment(new Mobile_number_fragment(),"Mobile Number");
+        login_pager.setAdapter(login_pager_adapter);
+
+        //load_phoneFragment();
     }
     //============================================ON CREATE=========================================
 
@@ -45,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         FragmentManager frag_manager = getSupportFragmentManager();
         FragmentTransaction frag_transact = frag_manager.beginTransaction();
         frag_transact.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        frag_transact.replace(R.id.login_frag_container,fragment);
+        frag_transact.replace(R.id.login_frag_pager,fragment);
         frag_transact.addToBackStack(null);
         frag_transact.commit();
     }
@@ -55,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         FragmentManager frag_manager = getSupportFragmentManager();
         FragmentTransaction frag_transact = frag_manager.beginTransaction();
         frag_transact.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        frag_transact.replace(R.id.login_frag_container,mobileNumberFragment);
+        frag_transact.replace(R.id.login_frag_pager,mobileNumberFragment);
         frag_transact.commit();
     }
 
@@ -65,9 +80,44 @@ public class LoginActivity extends AppCompatActivity {
         frag_manager.popBackStack();
         FragmentTransaction frag_transact = frag_manager.beginTransaction();
         frag_transact.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        frag_transact.replace(R.id.login_frag_container,userDetailsFragment);
+        frag_transact.replace(R.id.login_frag_pager,userDetailsFragment);
         frag_transact.commit();
     }
     //-----------------------------------------------DEFINED METHODS--------------------------------
+
+
+    public class LoginPager_test extends FragmentPagerAdapter{
+
+        private final List<Fragment> mList = new ArrayList<>();
+        private final List<String> mTitleList = new ArrayList<>();
+
+        LoginPager_test(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return mList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mList.size();
+        }
+
+        void addFragment(Fragment fragment, String title) {
+            mList.add(fragment);
+            mTitleList.add(title);
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mTitleList.get(position);
+        }
+
+    }
+
 
 }

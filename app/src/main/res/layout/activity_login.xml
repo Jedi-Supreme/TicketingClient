@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,33 +8,39 @@
     android:padding="@dimen/activity_padding"
     tools:context=".activities.LoginActivity">
 
-    <androidx.cardview.widget.CardView
-        android:background="@drawable/rounded_dark_border"
-        android:id="@+id/card_login_banner"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/margin_small"
-        app:cardElevation="@dimen/margin_tiny"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/banner_iv_dim"
-            android:layout_gravity="center"
+        <androidx.cardview.widget.CardView
             android:background="@drawable/rounded_dark_border"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/jjc_black" />
+            android:id="@+id/card_login_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/margin_small"
+            app:cardElevation="@dimen/margin_tiny"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.cardview.widget.CardView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/banner_iv_dim"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_dark_border"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/jjc_black" />
 
-    <FrameLayout
-        android:id="@+id/login_frag_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_login_banner" />
+        </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/login_frag_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_login_banner"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

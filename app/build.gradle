@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.jedit.ticketingclient"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -38,11 +38,11 @@ dependencies {
     //----------------------------------------ROOM DB-----------------------------------------------
 
     //---------------------------------------FIREBASE-----------------------------------------------
-    implementation 'com.google.firebase:firebase-core:17.2.0'
-    implementation 'com.google.firebase:firebase-auth:19.0.0'
-    implementation 'com.google.firebase:firebase-database:19.1.0'
-    implementation 'com.google.firebase:firebase-storage:19.0.1'
-    implementation 'com.google.firebase:firebase-messaging:20.0.0'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
+    implementation 'com.google.firebase:firebase-messaging:20.0.1'
     //---------------------------------------FIREBASE-----------------------------------------------
 
     testImplementation 'junit:junit:4.12'
@@ -50,3 +50,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }
+apply plugin: 'com.google.gms.google-services'
